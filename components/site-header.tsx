@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import type { Lang } from '@/lib/projects';
+export function Header({lang}:{lang:Lang}){const ko=lang==='ko';return <header className="topbar wrap"><Link className="brand" href={`/${lang}`} aria-label="DOT home">D<span>•</span>T</Link><nav className="nav" aria-label={ko?'주요 메뉴':'Main navigation'}><Link href={`/${lang}/about`}>{ko?'소개':'About'}</Link><Link href={`/${lang}/projects`}>{ko?'프로젝트':'Projects'}</Link><Link href={`/${lang}#skills`}>{ko?'역량':'Skills'}</Link><Link href={`/${lang}#contact`}>{ko?'연락':'Contact'}</Link></nav><Link className="language" href={`/${ko?'en':'ko'}`}><b>{ko?'KR':'EN'}</b> / {ko?'EN':'KR'}</Link></header>}
+export function Footer({lang}:{lang:Lang}){return <footer className="footer wrap"><span>© 2026 DOT — DESIGN × ENGINEERING</span><span className="mono">FROM CONCEPT TO CREATION.</span><a href="#top">{lang==='ko'?'위로 ↑':'BACK TO TOP ↑'}</a></footer>}

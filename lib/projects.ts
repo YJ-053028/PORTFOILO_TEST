@@ -1,0 +1,18 @@
+export type Project = {
+  slug: string; number: string; category: string; year: string; role: string;
+  title: { ko: string; en: string }; subtitle: { ko: string; en: string };
+  variant: 'chair' | 'lamp' | 'object'; overview: { ko: string; en: string };
+  background: { ko: string; en: string };
+};
+
+export const projects: Project[] = [
+  { slug:'form-chair', number:'01', category:'Graduation Project', year:'2025', role:'Product Design · Engineering', title:{ko:'균형의 형태',en:'Form in Balance'}, subtitle:{ko:'구조의 긴장감을 드러내는 모듈형 라운지 체어',en:'A modular lounge chair shaped by structural tension'}, variant:'chair', overview:{ko:'편안함과 구조적 가벼움 사이의 균형을 탐구한 라운지 체어 프로젝트입니다.',en:'A lounge chair exploring the balance between comfort and structural lightness.'}, background:{ko:'작은 공간에서 오래 머무는 가구는 안정감을 주면서도 시각적으로 부담스럽지 않아야 합니다. 프레임과 착좌부를 분리해 필요한 지지 구조를 드러내고, 재료가 만드는 긴장감을 형태의 일부로 다뤘습니다.',en:'Furniture for compact living should feel reassuring without overwhelming a room. Separating the frame from the seat reveals the supporting structure and turns material tension into part of the form.'}},
+  { slug:'orbit-light', number:'02', category:'Personal Project', year:'2024', role:'Concept · 3D Modeling', title:{ko:'오빗 라이트',en:'Orbit Light'}, subtitle:{ko:'빛의 방향을 조절하는 데스크 램프',en:'A desk light that gives direction to light'}, variant:'lamp', overview:{ko:'하나의 축을 중심으로 갓의 방향을 바꾸는 조명 컨셉입니다.',en:'A lighting concept with a shade that pivots around a single axis.'}, background:{ko:'빛을 이동시키는 사용 동작을 조형 언어로 확장했습니다. 간결한 회전 구조와 명확한 접점을 중심으로 컨셉 모델을 발전시켰습니다.',en:'The gesture of redirecting light becomes the visual language. The concept develops around a simple pivot and a clear point of connection.'}},
+  { slug:'modular-object', number:'03', category:'CAD Design', year:'2024', role:'CAD · Structure', title:{ko:'모듈 오브젝트',en:'Modular Object'}, subtitle:{ko:'조립과 확장을 위한 모듈 구조 연구',en:'A study of modular assembly and extension'}, variant:'object', overview:{ko:'반복 가능한 연결 방식을 가진 소형 오브젝트의 구조 연구입니다.',en:'A structural study for a small object built around repeatable connections.'}, background:{ko:'부품 수를 줄이면서 다양한 배치를 만들 수 있도록 연결부와 기본 모듈을 설계했습니다. 조립 순서가 직관적으로 읽히도록 각 결합 요소를 형태에 반영했습니다.',en:'The connector and base module are designed to reduce part count while enabling varied arrangements. Each joint is expressed in the form so assembly reads intuitively.'}},
+];
+
+export const copy = {
+  ko: { nav:['소개','프로젝트','역량','연락'], hero:'사용자의 경험에서 출발해, 형태와 구조로 완성하는 디자인 엔지니어링.', works:'만드는 과정까지', works2:'디자인합니다.', worksIntro:'아이디어가 실제 제품이 되기까지. 형태와 구조를 함께 고민한 작업을 소개합니다.', view:'프로젝트 보기', about:'DOT 소개', all:'모든 프로젝트 보기', skills:'아이디어를', skills2:'실체로.', skillsIntro:'도구 자체보다, 도구를 사용해 무엇을 설계하고 검증하는지 보여줍니다.', contact:'함께 만들어', contact2:'볼까요?', categories:['전체','졸업 프로젝트','CAD 설계','3D 모델링','개인 프로젝트'], sections:['한눈에 보기','배경과 컨셉','형태 발전','3D 모델링','구조와 조립','기술 도면','최종 결과'] },
+  en: { nav:['About','Projects','Skills','Contact'], hero:'Design engineering from user experience to form, structure, and making.', works:'Designed down', works2:'to the details.', worksIntro:'From first idea to finished product. Selected work exploring form, function, and the structure between.', view:'Explore projects', about:'About DOT', all:'View all projects', skills:'Make ideas', skills2:'tangible.', skillsIntro:'The tools matter less than what they help us design, communicate, and validate.', contact:"Let's make", contact2:'it real.', categories:['ALL','GRADUATION PROJECT','CAD DESIGN','3D MODELING','PERSONAL PROJECT'], sections:['At a glance','Background & concept','Developing the form','3D modeling','Structure & assembly','Technical drawing','Final result'] },
+} as const;
+export type Lang = keyof typeof copy;
